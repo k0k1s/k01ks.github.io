@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+
+.content {
+    height: 100vh;
+    overflow: hidden;
+    border-top: 6px solid rgb(37, 0, 41)
+}
+
+body, html {
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+.page{
+    background-color: rgb(0, 0, 0);
+    background-image: url('../Img/page.jpg');
+    background-position: 35%;
+    padding: 0% 10% 0% 10%;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+}
+  
+.header {
+    background-color: #ffffff;
+    color: #2c2c2c;
+    text-align: center;
+}
+
+h1 {
+  font-size: 40px; /* Adjust the font size as needed */
+}
+
+  .left{
+    position:absolute;
+    right: 0;
+    top: 4;
+    width: 40%;
+  }
+
+.nav{
+    display: flex;
+    align-items: center;
+    padding: 0%;
+
+}
+  .title{
+    width: 50%;
+    padding: 0%;
+    
+  }
+
+
+  .container {
+    overflow: hidden;
+    margin: 5%;
+    padding: 5%;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    max-width: 100%; /* Adjusted to be responsive */
+  }
+
+iframe{
+  background-color: #ffffff;
+}
+.footer {
+  background-color: #000000;
+  color: #ffffff;
+  height: 5%;
+  padding: 2%;
+  background-image: url('../Img/Texture.jpg')
+}
+
+img{
+  height: auto;
+  width: 10%;
+  padding: 0%;
+  margin: 0%;
+}
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  color: black;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}

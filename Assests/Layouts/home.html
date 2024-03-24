@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="../Style/style.css">
+
+        <title>k0k1s</title>
+
+        <script>
+            function updateDateTime() {
+                var now = new Date();
+                var dateElement = document.getElementById('currentDate');
+                var timeElement = document.getElementById('currentTime');
+    
+                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                var formattedDate = now.toLocaleDateString('en-US', options);
+                var formattedTime = now.toLocaleTimeString('en-US');
+    
+                dateElement.textContent = formattedDate;
+                timeElement.textContent = formattedTime;
+            }
+    
+            // Update the date and time every second
+            setInterval(updateDateTime, 1000);
+
+            function loadContent(page) {
+            var contentFrame = document.getElementById('contentFrame');
+            contentFrame.src = page;
+        }
+
+
+        </script>
+    </head>
+
+    <body>
+
+        <center>
+            <div class="page">
+                <div class="header">
+                    <div class="left">
+                        <p id="currentDate"></p>
+                        <p id="currentTime"></p>
+                    </div>
+                    <h1>k0k1s.</h1>
+                    <div class="nav">
+                        <div class="title">
+
+                            <h2>|[<span id="content" class="blink">^^</span>]|</h2>
+                            <p>Find me on</p>
+
+                        <p><strong><a href="https://github.com/DilzNanayakkara" target="_blank"><img src="../Img/github.png" alt="GitHub Icon"></a></strong>
+                            <strong><a href="https://www.linkedin.com/in/dilshan-nanayakkara-001-/" target="_blank"><img src="../Img/linkedin.png" alt="LinkedIn Icon"></a></strong>
+                            <strong><a href="https://www.instagram.com/dilznanayakkara/" target="_blank"><img src="../Img/X.png" alt="X Icon"></a></strong>
+                            <strong><img src="../Img/email.png" alt="Email Icon"></a></strong></p>
+
+
+                        </div>
+
+                        <p>Hi, My name is <strong>Dilshan</strong> goes the name 'k0k1s'. A Undergraduate Currently Studying Information Technology Specializaing in Cybesecurity.
+                            Free to to have a chat with me on anything and see my projects and blogs if interested.</p> 
+
+
+                    </div>
+                     <center>       
+                    <a href="javascript:void(0);" onclick="loadContent('./projects.html')">Projects</a>
+                    <a href="javascript:void(0);" onclick="loadContent('./blogs.html')">Blogs</a>
+                     </center>
+
+                </div>
+                
+                <div class="content">
+                   <iframe id="contentFrame" style="width: 100%; height: 100%;" frameborder="0" src="./projects.html"></iframe>
+                </div>
+                <div class="footer">
+                    <p>&copy; Created by k0k1s.</p>
+                </div>
+                
+    
+            </div>
+        </center>
+    </body>
+</html>
