@@ -60,7 +60,7 @@ body, html {
 
 .nav a {
     text-decoration: none;
-    color: #333;
+    color: #ec3737;
     padding: 0 10px;
 }
 
@@ -94,6 +94,31 @@ img {
     width: 24px;
     margin: 0 5px;
 }
+.normal-container-name {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5%;
+}
+.normal-container-name-item {
+    padding: 10px;
+    width: 90%; /* Adjust width as needed */
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    border-radius: 4px;        
+}
+
+/* Style the anchor tags (links) within the container items */
+.normal-container-name-item a {
+    text-decoration: none;  /* Remove underline */
+    font-style: italic;  /* Make text italic */
+    color: rgb(66, 64, 64);  /* Default color for links */
+}
+
+/* Style the anchor tags (links) on hover */
+.normal-container-name-item a:hover {
+    color: red;  /* Change color to red on hover */
+}
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
@@ -121,3 +146,11 @@ img {
         height: 500px;
     }
 }
+
+
+.image-class {
+    /* Add your desired image styles here */
+    width: 25%;  /* Adjust width as needed */
+    height: auto;  /* Maintain aspect ratio */
+    border: 2px solid #ddd;  /* Optional border */
+  }
