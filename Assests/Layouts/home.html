@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>k0k1s</title>
     <link rel="stylesheet" type="text/css" href="../Style/style.css">
     <script>
@@ -21,20 +22,23 @@
             var contentFrame = document.getElementById('contentFrame');
             contentFrame.src = page;
         }
+
+        function redirectToDefault() {
+            loadContent('./default.html'); // Load the default page into the iframe
+        }
     </script>
 </head>
 <body onload="updateDateTime()">
     <div class="page">
         <div class="header">
-            <div class="left">
-                <img src="../Img/Me.jpg " alt="Profile Picture" class="profile-pic">
-            </div>
             <div class="title">
-                <h1>k0k1s<span id="content" class="blink">_</span></h1>
+                <h1 onclick="redirectToDefault()">k0k1s<span id="content" class="blink">_</span></h1>
             </div>
-            <div class="right">
+            <div class="middle">
                 <p id="currentDate"></p>
                 <p id="currentTime"></p>
+            </div>
+            <div class="right">
                 <p>
                     <strong><a href="../resume/T Dilshan Nanayakkara Resume.pdf" target="_blank"><img src="../Img/resume.png" alt="Resume"></a></strong>
                     <strong><a href="https://github.com/k0k1s" target="_blank"><img src="../Img/github.png" alt="GitHub Icon"></a></strong>
@@ -48,7 +52,7 @@
             <nav>
                 |
                 <a href="javascript:void(0);" onclick="loadContent('./projects.html')">Projects</a>|
-                <a href="javascript:void(0);" onclick="loadContent('./blogs.html')">Blogs</a>|
+                <a href="javascript:void(0);" onclick="loadContent('./aboutme.html')">About</a>|
             </nav>
         </div>
         <div class="content">
