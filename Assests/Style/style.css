@@ -5,17 +5,19 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color:  #f2f2f2; /* Light gray background */
+    background-color: #ffffff; /* Light gray background */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for dark mode */
 }
 
 .page {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     background-image: url('../Img/page.jpg');
     background-position: 35%;
     padding: 0 10%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    transition: background-color 0.3s ease;
 }
 
 .header {
@@ -31,20 +33,16 @@ body, html {
 
 .title h1 {
     font-size: 60px; /* Increased font size */
-    margin: 0; /* Remove margin to fit in header space */
+    margin: 0;
 }
 
 .subtitle {
     font-size: 16px;
-    color: #777; /* Adjust color as needed */
+    color: #777;
 }
 
 .blink {
     animation: blink-animation 1s steps(5, start) infinite;
-}
-
-#currentDate, #currentTime {
-    font-weight: bold;
 }
 
 @keyframes blink-animation {
@@ -55,18 +53,18 @@ body, html {
 
 .middle {
     flex: 2;
-    text-align: center; /* Center text inside the middle section */
+    text-align: center;
 }
 
 .right {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Align items to the right */
+    justify-content: flex-end;
     align-items: center;
 }
 
 .right p {
-    margin: 0 10px; /* Adjust margin as needed */
+    margin: 0 10px;
     font-size: 14px;
     color: #333;
 }
@@ -82,11 +80,11 @@ body, html {
     color: #ec3737;
     padding: 0 10px;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .nav a:hover {
     color: #000;
-    font-weight: bold;
 }
 
 .content {
@@ -101,7 +99,8 @@ body, html {
 
 .footer {
     text-align: center;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ffffff;
+    padding: 10px 0;
 }
 
 .footer p {
@@ -113,22 +112,25 @@ img {
     height: 24px;
     width: 24px;
     margin: 0 5px;
+    transition: filter 0.3s ease; /* Smooth image transitions for dark mode */
 }
 
 .normal-container-name {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 20px; /* Space between items */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     justify-content: center;
-    padding: 20px; /* Optional: Adjust padding if needed */
+    padding: 20px;
 }
 
 .normal-container-name-item {
     padding: 10px;
-    border: 1px solid #000000;
+    border: 1px solid #000;
     border-radius: 4px;
-    background-color: #fff; /* Background color for items */
-    text-align: center; /* Center text inside items */
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .normal-container-name-item p {
@@ -136,19 +138,27 @@ img {
 }
 
 .normal-container-name-item a {
-    text-decoration: none;  /* Remove underline */
-    font-style: italic;  /* Make text italic */
-    color: rgb(66, 64, 64);  /* Default color for links */
+    text-decoration: none;
+    font-style: italic;
+    color: rgb(66, 64, 64);
+    transition: color 0.3s ease;
 }
 
 .normal-container-name-item a:hover {
-    color: red;  /* Change color to red on hover */
+    color: red;
 }
 
-/* Responsive adjustments */
+.image-class {
+    width: 60%;
+    height: auto;
+    border: 2px solid #ffffff;
+    display: block;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 600px) {
     .normal-container-name {
-        grid-template-columns: 1fr; /* Stack items in a single column on smaller screens */
+        grid-template-columns: 1fr;
     }
 
     .header {
@@ -176,14 +186,39 @@ img {
     }
 
     .normal-container-name-item {
-        font-size: 14px; /* Adjust font size for readability on small screens */
+        font-size: 14px;
     }
 }
 
-.image-class {
-    width: 35%;
-    height: auto;
-    border: 2px solid #ddd;
-    display: block;
-    margin: 20px auto; /* Center the image horizontally and add vertical spacing */
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
+
+.dark-mode .page {
+    background-color: #1e1e1e;
+    background-image: none; /* Optionally disable background image in dark mode */
+}
+
+.dark-mode .nav a {
+    color: #0e9000;
+}
+
+.dark-mode .nav a:hover {
+    color: #0e9000;
+}
+
+.dark-mode .normal-container-name-item {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.dark-mode img {
+    filter: invert(1);
+}
+
+.dark-mode .footer {
+    border-color: #444;
+}
+yyyyyyyyyyyyyyy

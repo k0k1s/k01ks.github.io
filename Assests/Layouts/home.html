@@ -26,13 +26,95 @@
         function redirectToDefault() {
             loadContent('./default.html'); // Load the default page into the iframe
         }
+
+        function toggleDarkMode() {
+            var body = document.body;
+            var currentMode = body.classList.toggle('dark-mode'); // Toggle the dark-mode class
+            localStorage.setItem('darkMode', currentMode ? 'enabled' : 'disabled');
+        }
+
+        function applySavedTheme() {
+            var savedMode = localStorage.getItem('darkMode');
+            if (savedMode === 'enabled') {
+                document.body.classList.add('dark-mode');
+            }
+        }
     </script>
+    <style>
+        /* Light mode (default) styles */
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .header, .nav, .footer, .content iframe {
+            background-color: #f9f9f9;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            filter: none;
+        }
+
+        .toggle-button {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            color: black;
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .header, 
+        .dark-mode .nav, 
+        .dark-mode .footer, 
+        .dark-mode .content iframe {
+            background-color: #1e1e1e;
+        }
+
+        .dark-mode a {
+            color: #bb86fc;
+        }
+
+        .dark-mode a:hover {
+            color: #e7cfff;
+        }
+
+        .dark-mode img {
+            filter: invert(1); /* Invert colors for better visibility in dark mode */
+        }
+
+        .dark-mode .toggle-button {
+            background-color: #333333;
+            color: white;
+            border-color: #666666;
+        }
+    </style>
 </head>
-<body onload="updateDateTime()">
+<body onload="updateDateTime(); applySavedTheme();">
     <div class="page">
         <div class="header">
             <div class="title">
+                
                 <h1 onclick="redirectToDefault()">k0k1s<span id="content" class="blink">_</span></h1>
+                <img src="../new.gif" class="image-class" alt="Pixel Art Pack Side Scroller">
+
+                
             </div>
             <div class="middle">
                 <p id="currentDate"></p>
@@ -40,8 +122,13 @@
             </div>
             <div class="right">
                 <p>
+<strong>
+    <a href="javascript:void(0);" onclick="toggleDarkMode()">
+        <img src="../Img/contrast-outline.svg" alt="Toggle Dark/Light Mode">
+    </a>
+</strong>
                     <strong><a href="../resume/T Dilshan Nanayakkara Resume.pdf" target="_blank"><img src="../Img/resume.png" alt="Resume"></a></strong>
-                    <strong><a href="https://github.com/k0k1s" target="_blank"><img src="../Img/github.png" alt="GitHub Icon"></a></strong>
+                    <strong><a href="https://github.com/k0k1s" target="_blank"><img src="../Img/github.svg" alt="GitHub Icon"></a></strong>
                     <strong><a href="https://www.linkedin.com/in/dilshan-nanayakkara-001-/" target="_blank"><img src="../Img/linkedin.png" alt="LinkedIn Icon"></a></strong>
                     <strong><a href="https://twitter.com/DilzNanayakkara" target="_blank"><img src="../Img/X.png" alt="X Icon"></a></strong>
                     <strong><a href="mailto:dilz.nanayakkara@gmail.com"><img src="../Img/email.png" alt="Email Icon"></a></strong>
