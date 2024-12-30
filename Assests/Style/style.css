@@ -5,13 +5,28 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Light gray background */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for dark mode */
+    position: relative; /* Required for pseudo-element positioning */
 }
 
-.page {
-    background-color: #ffffff;
+body::before {
+    content: "";
+    position: fixed; /* Ensure the background stays fixed during scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('../Img/page.jpg');
+    background-size: cover; /* Make the background image cover the entire page */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    opacity: 0.4; /* Adjust the opacity of the background image */
+    z-index: -1; /* Place the background image behind all other content */
+}
+
+
+.page {
+    background-color: #c1c1c1;
     background-position: 35%;
     padding: 0 10%;
     min-height: 100%;
@@ -99,7 +114,7 @@ body, html {
 
 .footer {
     text-align: center;
-    border-top: 1px solid #ffffff;
+    border-top: 1px solid #c1c1c1;
     padding: 10px 0;
 }
 
@@ -127,7 +142,7 @@ img {
     padding: 10px;
     border: 1px solid #000;
     border-radius: 4px;
-    background-color: #ffffff;
+    background-color: #c1c1c1;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -140,7 +155,7 @@ img {
 .normal-container-name-item a {
     text-decoration: none;
     font-style: italic;
-    color: rgb(66, 64, 64);
+    color: rgb(0, 131, 24);
     transition: color 0.3s ease;
 }
 
@@ -151,7 +166,7 @@ img {
 .image-class {
     width: 60%;
     height: auto;
-    border: 2px solid #ffffff;
+    border: 2px solid #c1c1c1;
     display: block;
 }
 
@@ -221,4 +236,3 @@ body.dark-mode {
 .dark-mode .footer {
     border-color: #444;
 }
-yyyyyyyyyyyyyyy
